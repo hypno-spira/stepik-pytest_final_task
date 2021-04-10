@@ -58,9 +58,9 @@ def test_guest_cant_see_success_message_after_adding_product_to_basket(browser):
 
 
 @pytest.mark.need_review
-@pytest.mark.parametrize('link_tail', linktail)
-def test_guest_can_add_product_to_basket(browser, link_tail):  # добавить товар в корзину (с параметризацией)
-    link = f"http://selenium1py.pythonanywhere.com/catalogue/coders-at-work_207/{link_tail}"
+# @pytest.mark.parametrize('link_tail', linktail)
+def test_guest_can_add_product_to_basket(browser):  # добавить товар в корзину (БЕЗ параметризации)
+    link = f"http://selenium1py.pythonanywhere.com/catalogue/coders-at-work_207/?promo=offer1"  # {link_tail}"
     page = ProductPage(browser, link)
     page.open()
     page.add_product_to_basket()
