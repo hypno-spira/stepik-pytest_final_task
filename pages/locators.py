@@ -16,5 +16,7 @@ class ProductPageLocators():
     BOOK_NAME_AFTER = (By.CSS_SELECTOR, ".alertinner strong")
     BOOK_PRICE = (By.CSS_SELECTOR, ".product_main .price_color")
     BOOK_PRICE_AFTER = (By.CSS_SELECTOR, ".alertinner p > strong")
+    SUCCESS_MESSAGE = (By.CSS_SELECTOR, "#messages :nth-child(1) .alertinner")
+
 
 

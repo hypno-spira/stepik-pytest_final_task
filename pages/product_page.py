@@ -1,5 +1,6 @@
 from .base_page import BasePage
 from .locators import ProductPageLocators
+from selenium.webdriver.support import expected_conditions as EC
 
 
 class ProductPage(BasePage):
@@ -19,4 +20,12 @@ class ProductPage(BasePage):
         price_of_book = self.browser.find_element(*ProductPageLocators.BOOK_PRICE)
         price_of_book_after_adding = self.browser.find_element(*ProductPageLocators.BOOK_PRICE_AFTER)
         assert price_of_book.text == price_of_book_after_adding.text, "Стоимость книг не совпадают!"
+
+    def should_not_be_success_message(self):
+        assert self.is_not_element_present(*ProductPageLocators.SUCCESS_MESSAGE), \
+            "Success message should not disappear"
+
+    def should_disappear_success_message(self):
+        assert self.is_disappeared(*ProductPageLocators.SUCCESS_MESSAGE), \
+            "Success message should disappear"
 
